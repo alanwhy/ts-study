@@ -46,14 +46,14 @@ const consoleText = (text: string): void => {
   console.log(text);
 }
 
-let v: void = undefined
+let v: void
 v = null
 // consoleText(123)
 // consoleText("aa")
 
 // null 和 undefined
 
-let u: undefined = undefined
+let u: undefined
 let n: null = null
 
 // never类型

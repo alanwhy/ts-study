@@ -127,7 +127,7 @@ let obj3 = {
 
 let obj4: unknown = {
   [Symbol.toPrimitive](type) {
-    console.log(type);
+    // console.log(type);
   }
 }
 
@@ -154,4 +154,4 @@ const obj6 = {
   b: "b"
 }
 
-console.log(Array.prototype[Symbol.unscopables]);
+// console.log(Array.prototype[Symbol.unscopables]);
