@@ -1,8 +1,9 @@
-// import "./example/basic-type"
-// import "./example/symbol"
-// import "./example/interface"
-// import "./example/function"
-// import "./example/generics"
-// import "./example/es-class-1"
-// import "./example/es-class-2"
-import "./example/class";
+// import './example/basic-type.ts'
+// import './example/symbol'
+// import './example/interface'
+// import './example/function'
+// import './example/generics'
+// import './example/es6-class-1.js'
+// import './example/es6-class-2.js'
+// import './example/class'
+import './example/enum'
