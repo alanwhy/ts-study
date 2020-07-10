@@ -1,107 +1,103 @@
+// const getFullName = ({ firstName, lastName }) => {
+//     return `${firstName} ${lastName}`
+// }
+// console.log(getFullName({
+//     firstName: 'haha',
+//     lastName: 18,
+// }))
 interface NameInfo {
-  firstName: string,
-  lastName: string
+    firstName: string,
+    lastName: string
 }
 
 const getFullName = ({ firstName, lastName }: NameInfo): string => {
-  return `${firstName} ${lastName}`
+    return `${firstName} ${lastName}`
 }
-
 
 getFullName({
-  firstName: "hh",
-  lastName: "11"
+    firstName: 'haha',
+    lastName: 'li',
 })
 
-// 多选 和 可选
 interface Vegetable {
-  color?: string,
-  readonly type: string,
-  [prop: string]: any
+    color?: string,
+    readonly type: string
 }
-
 
 const getVegetables = ({ color, type }: Vegetable) => {
-  return `A ${color ? (color + ' ') : ''}${type}`
+    return `A ${color ? (color + ' ') : ''}${type}`
 }
 
-getVegetables({
-  color: "red",
-  type: "tomato",
-  size: 2
-})
+const vegetableInfo = {
+    type: 'tomato',
+    color: 'red',
+    size: 2,
+}
 
 let vegetableObj: Vegetable = {
-  type: "tomato"
+    type: 'tomato',
 }
-
-// vegetableObj.type = "va"
+// vegetableObj.type = 'carrot'
 
 interface ArrInter {
-  0: number,
-  readonly 1: string
+    0: number,
+    readonly 1: string
 }
 
-let arr5: ArrInter = [1, "a"]
+let arr: ArrInter = [1, 'a']
+// arr[1] = 'b'
 
-// interface AddFunc {
-//   (num1: number, num2: number): number
-// }
+// console.log(getVegetables(vegetableInfo))
 
 type AddFunc = (num1: number, num2: number) => number
-
-const add: AddFunc = (n1, n2) => n1 + n2
+// const add: AddFunc = (n1, n2) => n1 + n2
 
 // interface RoleDic {
-//   [id: number]: string
+//     [id: number]: string
 // }
-
 // const role1: RoleDic = {
-//   0: "superman"
+//     'a': 'super_admin',
 // }
-
 interface RoleDic {
-  [id: string]: string
+    [id: string]: string
 }
-
-const role1: RoleDic = {
-  a: "admin",
-  1: "super_admin"
+const role2: RoleDic = {
+    a: 'super_admin',
+    1: 'admin',
 }
-
-// 接口继承
 
 interface Vegetables {
-  color: string
+    color: string
 }
 interface Tomato extends Vegetables {
-  radius: number
+    radius: number
 }
 interface Carrot extends Vegetables {
-  length: number
+    length: number
 }
-
 const tomato: Tomato = {
-  radius: 1,
-  color: "red"
+    radius: 1,
+    color: 'red',
 }
-
 const carrot: Carrot = {
-  length: 1,
-  color: "orange"
+    length: 2,
+    color: 'orange',
 }
-
-// 混合类型接口
 
 interface Counter {
-  (): void,
-  count: number
+    (): void,
+    count: number
 }
 
 const getCounter = (): Counter => {
-  const c = () => { c.count++ }
-  c.count = 0
-  return c
+    const c = () => { c.count++ }
+    c.count = 0
+    return c
 }
-
 const counter: Counter = getCounter()
+counter()
+console.log(counter.count)
+counter()
+console.log(counter.count)
+counter()
+console.log(counter.count)

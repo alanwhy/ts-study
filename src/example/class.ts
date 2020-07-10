@@ -68,31 +68,31 @@
 // console.log(a1.name)
 
 class Parent {
-  public static getAge() {
-      return Parent.age
-  }
-  private static age: number = 18
-  constructor() {}
+    public static getAge() {
+        return Parent.age
+    }
+    private static age: number = 18
+    constructor() {}
 }
 const p = new Parent()
 // console.log(p.age)
 // console.log(Parent.age)
 
 class Info {
-  public name: string
-  public age?: number
-  private _infoStr: string
-  constructor(name: string, age?: number, public sex?: string) {
-      this.name = name
-      this.age = age
-  }
-  get infoStr() {
-      return this._infoStr
-  }
-  set infoStr(value) {
-      // console.log(`setter: ${value}`)
-      this._infoStr = value
-  }
+    public name: string
+    public age?: number
+    private _infoStr: string
+    constructor(name: string, age?: number, public sex?: string) {
+        this.name = name
+        this.age = age
+    }
+    get infoStr() {
+        return this._infoStr
+    }
+    set infoStr(value) {
+        // console.log(`setter: ${value}`)
+        this._infoStr = value
+    }
 }
 // const info1 = new Info('lison')
 // console.log(info1)
@@ -129,37 +129,37 @@ info4.infoStr = 'lison: 18'
 // }
 
 class People {
-  constructor(public name: string) {}
+    constructor(public name: string) {}
 }
 let p2: People = new People('lison')
 class Animal {
-  constructor(public name: string) {}
+    constructor(public name: string) {}
 }
 p2 = new Animal('haha')
 
 interface FoodInterface {
-  type: string
+    type: string
 }
-class FoodClass implements FoodInterface {
-  public type: string
-}
+// class FoodClass implements FoodInterface {
+//     public type: string
+// }
 
 class A {
-  protected name: string
+    protected name: string
 }
 interface I extends A {}
 class B extends A implements I {
-  public name: string
+    public name: string
 }
 
 const create = <T>(c: new() => T): T => {
-  return new c()
+    return new c()
 }
 class Infos {
-  public age: number
-  constructor() {
-      this.age = 18
-  }
+    public age: number
+    constructor() {
+        this.age = 18
+    }
 }
 // console.log(create<Infos>(Infos).age)
 // console.log(create<Infos>(Infos).name)
