@@ -1,3 +1,4 @@
+// 交叉类型
 // const mergeFunc = <T, U>(arg1: T, arg2: U): T & U => {
 //     let res = {} as T & U
 //     res = Object.assign(arg1, arg2)
@@ -5,13 +6,15 @@
 // }
 // mergeFunc({ a: 'a' }, { b: 'b' })
 
+// 联合类型
 // const getLengthFunc = (content: string | number): number => {
 //     if (typeof content === 'string') { return content.length }
 //     else { return content.toString().length }
 // }
 // console.log(getLengthFunc(false))
 
-const valueList = [{}, () => {}]
+// unknown
+const valueList = [{}, () => { }]
 const getRandomValue = () => {
     const number = Math.random() * 10
     if (number < 5) { return valueList[0] }
@@ -21,11 +24,13 @@ const item = getRandomValue()
 // function isString(value: number | string): value is string {
 //     return typeof value === 'string'
 // }
+// 类型断言 自定义类型保护
 // if ((item as string).length) {
 //     console.log((item as string).length)
 // } else {
 //     console.log((item as number).toFixed())
 // }
+// 类型保护  typeof类型保护
 // string/number/boolean/symbol中的一种
 // if (typeof item === 'undefined') {
 //     console.log(item.toString())
@@ -33,6 +38,7 @@ const item = getRandomValue()
 //     console.log(item())
 // }
 
+// 类型保护 instanceof类型保护
 // class CreatedByClass1 {
 //     public age = 18
 //     constructor() {}
@@ -56,6 +62,8 @@ let values = '123'
 // values = undefined
 // string|undefined / string | null / string | undefined | null
 const sumFunc = (x: number, y?: number) => {
+    // 严格模式
+    // 可选参数和可选属性
     return x + (y || 0)
 }
 
@@ -67,6 +75,7 @@ const sumFunc = (x: number, y?: number) => {
 
 // function getSplicedStr(num: number | null): string {
 //     function getRes(prefix: string) {
+//         // 类型断言
 //         return prefix + num!.toFixed().toString()
 //     }
 //     num = num || 0.1
@@ -74,6 +83,7 @@ const sumFunc = (x: number, y?: number) => {
 // }
 // console.log(getSplicedStr(3.03))
 
+// 类型别名
 type TypeString = string
 let str2: TypeString
 type PositionType<T> = { x: T, y: T }
@@ -113,8 +123,10 @@ let _alias: Alias = {
 let _interface: Interface = {
     num: 321,
 }
+// 类型兼容
 _alias = _interface
 
+// 字符串自变量
 type Name = 'Lison'
 // const name3: Name = 'haha'
 type Direction = 'north' | 'east' | 'south' | 'west'
@@ -123,6 +135,7 @@ function getDirectionFirstLetter(direction: Direction) {
 }
 // console.log(getDirectionFirstLetter('north'))
 
+// 数字自变量
 type Age = 18
 interface InfoInterfaces {
     name: string
